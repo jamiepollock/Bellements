@@ -1,0 +1,13 @@
+﻿<div data-ng-controller="Bellements.PrevalueEditors.MultipleValuesController" class="multiple-values-controller">
+{{model.value}}
+
+  <ol>
+    <li data-ng-repeat="option in model.value.options">
+      <input type="text" data-ng-model="option.key" />
+      <input type="text" data-ng-model="option.value" />
+      <input type="radio" data-ng-model="model.value.defaultValue" value="{{option.value}}" name="bob" data-ng-disabled="hasValue(option.value)" />
+      <button data-ng-click="removeItem(option, $event)" class="btn btn-small">Remove</button>
+    </li> 
+  </ol>
+  <p><input type="text" data-ng-model="newItem.key" /><input type="text" data-ng-model="newItem.value" /><button data-ng-click="addItem($event)" class="btn btn-small">Add Item</button></p>
+</div>
